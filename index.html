@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Disco</title>
+        <link rel="stylesheet" href="index2.css">
+    </head>
+    <body>
+        <center>
+            <h1 class="Bg"> Color Changer</h1>
+            <button class="c1" onclick="changeColor('red')">Red</button>
+            <button class="c2" onclick="changeColor('yellow')">Yellow</button>
+            <button class="c3" onclick="changeColor('blue')">Blue</button>
+            <button class="c4" onclick="changeColor('green')">Green</button>
+            <button class="r" onclick="getRandomColor()">Random</button>
+            <div class="square" id="square"></div>
+        </center>
+
+        <style>
+            .c1 {
+                background-color: red;  
+                color: white;           
+                padding: 10px 20px;     
+                border: none;           
+                border-radius: 5px;     
+                font-size: 16px;        
+                cursor: pointer;       
+                
+            }
+            .c2 {
+                background-color: yellow;  
+                color: black;           
+                padding: 10px 20px;     
+                border: none;           
+                border-radius: 5px;     
+                font-size: 16px;        
+                cursor: pointer; 
+            }      
+                
+            .c3 {
+                background-color: blue;  
+                color: white;           
+                padding: 10px 20px;     
+                border: none;           
+                border-radius: 5px;     
+                font-size: 16px;        
+                cursor: pointer;       
+            }
+            .c4 {
+                background-color: green;  
+                color: black;           
+                padding: 10px 20px;     
+                border: none;           
+                border-radius: 5px;     
+                font-size: 16px;        
+                cursor: pointer; 
+            }         
+               
+            .r{
+                background-color: black;  
+                color: white;           
+                padding: 10px 20px;     
+                border: none;           
+                border-radius: 5px;     
+                font-size: 16px;        
+                cursor: pointer;       
+                
+            }
+            .square {
+                width: 250px;
+                height: 250px;
+                background-color: black;
+                margin-top: 100px;
+            }
+        </style>
+
+        <script>
+            let square = document.getElementById("square");
+
+            function changeColor(color) {
+                square.style.backgroundColor = color;
+            }
+             
+            
+            
+function getRandomColor() {
+    
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    changeColor(color);
+}
+
+
+function changeBackgroundColor() {
+    
+    square.style.backgroundColor = getRandomColor();
+}
+
+
+//setInterval(changeBackgroundColor, 2000);
+
+
+        </script>
+    </body>
+</html>
